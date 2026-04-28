@@ -1,0 +1,6 @@
+{
+  "name": "Wordle Modern",
+  "description": "A feature-rich Wordle-style game with categories, daily challenges, and a local leaderboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

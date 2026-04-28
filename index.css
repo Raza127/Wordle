@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Wordle Colors */
+  --color-wordle-correct: #6aaa64;
+  --color-wordle-present: #c9b458;
+  --color-wordle-absent: #787c7e;
+  --color-wordle-border: #d3d6da;
+  --color-wordle-key-hover: #d3d6da;
+  --color-wordle-key-bg: #d3d6da;
+  --color-wordle-dark-grid: #3a3a3c;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-slate-900 transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply bg-[#121213] text-slate-50;
+  }
+}
+
+@layer utilities {
+  .cell-correct {
+    @apply bg-[var(--color-wordle-correct)] border-[var(--color-wordle-correct)] text-white;
+  }
+  .cell-present {
+    @apply bg-[var(--color-wordle-present)] border-[var(--color-wordle-present)] text-white;
+  }
+  .cell-absent {
+    @apply bg-[var(--color-wordle-absent)] border-[var(--color-wordle-absent)] text-white;
+  }
+  .cell-empty {
+    @apply border-[var(--color-wordle-border)] dark:border-[var(--color-wordle-dark-grid)] transition-all;
+  }
+  .cell-filled {
+    @apply border-slate-500 dark:border-slate-400 scale-105;
+  }
+}
